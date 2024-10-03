@@ -29,18 +29,15 @@
       >
         <IconLock />
       </div>
-      <div
+      <!-- <div
         class="icon"
         id="i-sync"
         v-bind:style="{
           left: !!defaultEncryption ? '70px' : '45px',
         }"
-        v-show="
-          (dropboxToken || driveToken || oneDriveToken) && !style.isEditing
-        "
       >
         <IconSync />
-      </div>
+      </div> -->
       <div
         class="icon"
         id="i-qr"
@@ -79,7 +76,7 @@ import { getCurrentTab, okToInjectContentScript } from "../../utils";
 // Icons
 import IconCog from "../../../svg/cog.svg";
 import IconLock from "../../../svg/lock.svg";
-import IconSync from "../../../svg/sync.svg";
+// import IconSync from "../../../svg/sync.svg";
 import IconScan from "../../../svg/scan.svg";
 import IconPencil from "../../../svg/pencil.svg";
 import IconCheck from "../../../svg/check.svg";
@@ -89,7 +86,6 @@ import { isFirefox } from "../../browser";
 const computedPrototype = [
   mapState("style", ["style"]),
   mapState("accounts", ["defaultEncryption"]),
-  mapState("backup", ["driveToken", "dropboxToken", "oneDriveToken"]),
 ];
 
 let computed = {};
@@ -196,7 +192,7 @@ export default Vue.extend({
   components: {
     IconCog,
     IconLock,
-    IconSync,
+    // IconSync,
     IconScan,
     IconPencil,
     IconCheck,

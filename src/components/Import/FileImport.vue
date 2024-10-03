@@ -106,10 +106,18 @@ export default Vue.extend({
                     importData,
                     CryptoJS.AES.decrypt(key.enc, oldPassphrase).toString()
                   );
+                  await this.$store.dispatch(
+                    "accounts/applyPassphrase",
+                    CryptoJS.AES.decrypt(key.enc, oldPassphrase).toString()
+                  );
                 } else {
                   // v3 and v1 encryption
                   decryptedFileData = await decryptBackupData(
                     importData,
+                    oldPassphrase
+                  );
+                  await this.$store.dispatch(
+                    "accounts/applyPassphrase",
                     oldPassphrase
                   );
                 }

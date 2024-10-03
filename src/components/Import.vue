@@ -45,6 +45,10 @@ import FileImport from "./Import/FileImport.vue";
 import QrImport from "./Import/QrImport.vue";
 import TextImport from "./Import/TextImport.vue";
 
+// state.commit("currentView/changeView", "EnterPasswordPage", {
+//                 root: true,
+//               });
+
 export default Vue.extend({
   data: function () {
     const query = location.search ? location.search.substr(1) : "";
